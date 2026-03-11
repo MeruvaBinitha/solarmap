@@ -1,0 +1,77 @@
+/* blocks/carousel/carousel.css */
+
+.carousel {
+    position: relative;
+    container-type: inline-size;
+  }
+  
+  .carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 400ms ease;
+    will-change: transform;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+  }
+  
+  /* Multi-slide per view */
+  .carousel.per-view\=2 .carousel-slide { flex-basis: 50%; }
+  .carousel.per-view\=3 .carousel-slide { flex-basis: 33.3333%; }
+  
+  /* Basic caption styling */
+  .carousel-caption {
+    font: inherit;
+    color: inherit;
+  }
+  
+  /* Arrows */
+  .carousel-ui .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    z-index: 2;
+    background: rgb(0 0 0 / 55%);
+    color: #fff;
+    border: 0;
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .carousel-ui .carousel-arrow.prev { left: 8px; }
+  .carousel-ui .carousel-arrow.next { right: 8px; }
+  .carousel-ui .carousel-arrow:focus-visible { outline: 2px solid #fff; }
+  
+  /* Dots */
+  .carousel-ui .carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    translate: -50% 0;
+    display: flex;
+    gap: 8px;
+  }
+  .carousel-ui .carousel-dot {
+    width: 10px; height: 10px;
+    border-radius: 999px;
+    border: 0;
+    background: #d0d0d0;
+    cursor: pointer;
+  }
+  .carousel-ui .carousel-dot.active { background: #111; }
+  
+  /* Respect authoring colors/typography from the page */
+  .carousel, .carousel * {
+    color: inherit;
+    font-family: inherit;
+  }
